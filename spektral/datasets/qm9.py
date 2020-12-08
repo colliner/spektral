@@ -71,7 +71,7 @@ class QM9(Dataset):
         # Load labels
         labels_file = osp.join(self.path, 'gdb9.sdf.csv')
         labels = load_csv(labels_file)
-        labels = labels.set_index('mol_id').values[:, 1:]
+        labels = labels.set_index('mol_id').values[:, :]
         if self.amount is not None:
             labels = labels[:self.amount]
 
